@@ -1,0 +1,18 @@
+.main__container {
+    max-width: 800px;
+    overflow: hidden;
+}
+.section-title {
+    cursor: pointer;
+    border: 1px solid black;
+}
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
+}
+
+.section-content.active{
+    display: block;
+    max-height: 100%;
+}
