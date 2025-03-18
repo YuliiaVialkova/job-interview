@@ -10,6 +10,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s linear;
+    background-color: #efe5b9;
 }
 
 .section-content.active{
