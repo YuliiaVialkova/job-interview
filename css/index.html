@@ -1,45 +1,183 @@
 <!DOCTYPE html>
 <html lang="uk">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>CSS</title>
-    </head>
-    <body>
-        <header></header>
-        <main>
-            <h1>100 запитань по CSS для підготовки до співбесіди</h1>
-            <div class="main__container">
-                <div class="section">
-                    <h2 class="section-title">1. Селектори та їх типи</h2>
-                    <div class="section-content">
-                        <p>Селектор - від анг. слова select (укр. обрати).
-
-                            Селектор - це частина CSS-правила, яка повідомляє
-                            браузеру, до якого елементу веб-сторінки буде
-                            застосований CSS стиль.
-
-                            Тобто, селектор - це вибірка та формальний опис того
-                            елемента чи групи елементів, до яких будуть
-                            застосовані CSS стилі.</p>
-                        <h3>Типи селекторів</h3>
-                        <ul>
-                            <li>
-                                <h4>Універсальний селектор *</h4>
-                                <p>Вибирає всі елементи на сторінці</p>
-                                <pre>*{
-                                      margin: 0;       
-                                      }</pre>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer></footer>
-        <script src="script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>100 запитань по CSS для підготовки до співбесіди</h1>
+      <div class="main__container">
+        <div class="section">
+          <h2 class="section-title">1. Базові селектори та їх типи</h2>
+          <div class="section-content">
+            <p>
+              Селектор - від анг. слова select (укр. обрати). Селектор - це
+              частина CSS-правила, яка повідомляє браузеру, до якого елементу
+              веб-сторінки буде застосований CSS стиль. Тобто, селектор - це
+              вибірка та формальний опис того елемента чи групи елементів, до
+              яких будуть застосовані CSS стилі.
+            </p>
+            <h3>Основні селектори</h3>
+            <ul>
+              <li>
+                <h4>Universal selector *</h4>
+                <p>Вибирає всі елементи на сторінці</p>
+                <code>*{ margin: 0; }</code>
+              </li>
+              <li>
+                <h4>Type selector</h4>
+                <p>він вибирає всі елементи заданого типу в документі</p>
+                <code>p{ color: red; }</code>
+              </li>
+              <li>
+                <h4>Class selector</h4>
+                <p>він вибирає всі елементи з даним класом в документі</p>
+                <code>.text{ color: red; }</code>
+              </li>
+              <li>
+                <h4>ID selector</h4>
+                <p>
+                  він вибирає всі елементи з даним ідентифікатором в документі
+                </p>
+                <code>#text{ color: red; }</code>
+              </li>
+              <li>
+                <h4>Attribute selector</h4>
+                <p>
+                  Селектори атрибутів у CSS дозволяють стилізувати елементи на
+                  основі наявності та значення їхніх атрибутів.
+                </p>
+                <code>[input] { border: 2px solid red; }</code>
+                <h5>Основні види селекторів атрибутів:</h5>
+                <ul class="attribute">
+                  <li>
+                    <p>/* &lt;a&gt; elements with a title attribute */</p>
+                    <code> a[title] { color: purple; } </code>
+                  </li>
+                  <li>
+                    <p>
+                      /* &lt;a&gt; elements with an href matching
+                      "https://example.org" */
+                    </p>
+                    <code>
+                      a[href="https://example.org"] { color: green; }
+                    </code>
+                  </li>
+                  <li>
+                    <p>
+                      /* &lt;a&gt; elements with an href containing "example" */
+                    </p>
+                    <code> a[href*="example"] { font-size: 2em; } </code>
+                  </li>
+                  <li>
+                    <p>
+                      /* &lt;a&gt; elements with an href ending ".org",
+                      case-insensitive */
+                    </p>
+                    <code> a[href$=".org" i] { font-style: italic; } </code>
+                  </li>
+                  <li>
+                    <p>
+                      /* &lt;a&gt; elements whose class attribute contains the
+                      word "logo"*/
+                    </p>
+                    <code> a[class~="logo"] { padding: 2px;} </code>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section-title">2. Комбінаторні селектори</h2>
+          <div class="section-content">
+            <p>
+              Комбінатори — це селектори, які встановлюють зв’язок між двома або
+              більше простими селекторами, такими як « A є дочірнім елементом B»
+              або « A є суміжним із B», створюючи складний селектор.
+            </p>
+            <h3>Next-sibling combinator A + B</h3>
+            <code>img + p { font-weight: bold; }</code>
+            <h3>Subsequent-sibling combinator A ~ B</h3>
+            <p>
+              шукає всі В на одному рівні з А, вони діти одного батька, стилі
+              застосовуються тільки на всьому першому рівні вкладеності
+            </p>
+            <code>img ~ p { color: red; }</code>
+            <h3>Child combinator A > B</h3>
+            <p>
+              В є нащадком А, ці стилі застосовуються до В тільки на першому
+              рівні вкладеності
+            </p>
+            <h3>Descendant combinator A B</h3>
+            <p>
+              В є нащадком А, стилі застосовуються до всіх В на всіх рівнях
+              вкладеності
+            </p>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section-title">3. Псевдо-класи</h2>
+          <div class="section-content">
+            <p>
+              Псевдокласи визначають спеціальний стан елемента, наприклад, коли
+              на нього наводять курсор або коли він є першим серед сусідніх
+              елементів.
+            </p>
+            <h3>Динамічні псевдокласи</h3>
+            <p>Використовуються для реакції на дії користувача.</p>
+            <h4>:hover</h4>
+            <p>Коли курсор знаходиться над елементом</p>
+            <code>button:hover { color: blue; }</code>
+            <h4>:focus</h4>
+            <p>Коли елемент отримав фокус (наприклад, поле вводу)</p>
+            <code>input:focus { border-color: blue; }</code>
+            <h4>:active</h4>
+            <p>Коли елемент активний (наприклад, натиснута кнопка)</p>
+            <code>a:active { color: green; }</code>
+            <h3>Структурні псевдокласи</h3>
+            <p>
+              Дозволяють вибирати елементи в залежності від їхнього положення
+              серед інших.
+            </p>
+            <h4>:first-child</h4>
+            <p>Вибирає перший дочірній елемент</p>
+            <code>p:first-child { color: red; }</code>
+            <h4>:last-child</h4>
+            <p>Вибирає останній дочірній елемент</p>
+            <code>p:last-child { color: blue; }</code>
+            <h4>:nth-child(n)</h4>
+            <p>Вибирає n-й дочірній елемент</p>
+            <code>li:nth-child(2) { font-weight: bold; }</code>
+            <h3>Псевдокласи для форм</h3>
+            <h4>:checked</h4>
+            <p>Вибирає відмічені чекбокси або радіокнопки</p>
+            <code>input:checked { outline: 2px solid red; }</code>
+            <h4>:disabled</h4>
+            <p>Вибирає відключені елементи форми</p>
+            <code>input:disabled { background: gray; }</code>
+            <h4>:required</h4>
+            <p>Вибирає обов'язкові поля</p>
+            <code>input:required { border: 2px solid red; }</code>
+            <h3>Інші корисні псевдокласи</h3>
+            <h4>:not(selector)</h4>
+            <p>Вибирає всі елементи, крім вказаного</p>
+            <code>p:not(.special) { color: gray; }</code>
+            <h4>:first-of-type</h4>
+            <p>Вибирає перший елемент свого типу серед сусідів</p>
+            <code>h2:first-of-type { color: blue; }</code>
+            <h4>:last-of-type</h4>
+            <p>Вибирає останній елемент свого типу серед сусідів</p>
+            <code>p:last-of-type { font-style: italic; }</code>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
 </html>
