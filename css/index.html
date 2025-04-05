@@ -175,6 +175,110 @@
             <code>p:last-of-type { font-style: italic; }</code>
           </div>
         </div>
+        <div class="section">
+          <h2 class="section-title">4. border-radius</h2>
+          <div class="section-content">
+            <p>
+              це CSS-властивість, що дозволяє розробникам визначати, як
+              округляються межі блоку.
+            </p>
+            <ol>
+              <li>
+                <code>border-radius: 1px 0 3px 4px;</code>
+                <p>top-left → top-right → bottom-right → bottom-left</p>
+              </li>
+              <li>
+                <code>border-radius: 1px 3px 4px;</code>
+                <p>top-left → top-right and bottom-left → bottom-right</p>
+              </li>
+              <li>
+                <code>border-radius: 10px 5%;</code>
+                <p>top-left and bottom-right → top-right and bottom-left</p>
+              </li>
+              <li>
+                <code>border-radius: 5%;</code>
+                <p>top-left and bottom-right and top-right and bottom-left</p>
+              </li>
+              <li>
+                <code
+                  >border-radius: 10px 5% 10px 5% / 20px 30px 20px 30px;</code
+                >
+                <p><b>горизонтальні радіуси / вертикальні радіуси</b></p>
+                <p>
+                  top-left → top-right → bottom-right → bottom-left / top-left →
+                  top-right → bottom-right → bottom-left
+                </p>
+              </li>
+              <li>
+                <code>border-radius: 10px 10px 5% / 20px 30px 20px;</code>
+                <p><b>горизонтальні радіуси / вертикальні радіуси</b></p>
+                <p>
+                  top-left → top-right and bottom-left → bottom-right / top-left
+                  → top-right and bottom-left → bottom-right
+                </p>
+              </li>
+              <li>
+                <code>border-radius: 10px 5% / 20px 20px;</code>
+                <p><b>горизонтальні радіуси / вертикальні радіуси</b></p>
+                <p>
+                  top-left and bottom-right → top-right and bottom-left /
+                  top-left and bottom-right → top-right and bottom-left
+                </p>
+              </li>
+              <li>
+                <code>border-radius: 5% / 20px;</code>
+                <p><b>горизонтальні радіуси / вертикальні радіуси</b></p>
+                <p>
+                  top-left and bottom-right and top-right and bottom-left /
+                  top-left and bottom-right and top-right and bottom-left
+                </p>
+              </li>
+            </ol>
+            <div>
+              <p>1 значення - <span>всі кути однакові</span></p>
+              <p>
+                2 значення -
+                <span>
+                  top-left and bottom-right → top-right and bottom-left
+                </span>
+              </p>
+              <p>
+                3 значення -
+                <span>top-left → top-right and bottom-left → bottom-right</span>
+              </p>
+              <p>
+                4 значення -
+                <span>top-left → top-right → bottom-right → bottom-left</span>
+              </p>
+            </div>
+            <h3 class="cyan">Як перевести px у % для border-radius</h3>
+            <code>% = (px / розмір елемента) × 100</code>
+            <p><b>Але важливо!!!</b></p>
+            <p class="blue">
+              якщо border-radius застосовується <strong>горизонтально</strong> —
+              тоді враховується <strong>ширина</strong> елемента
+            </p>
+            <p class="blue">
+              якщо <strong>вертикально</strong> — тоді <strong>висота</strong>
+            </p>
+            <p>Наприклад</p>
+            <pre>
+              <code
+                >.element {
+                  width: 400px;
+                  height: 200px;
+                  border-radius: 100px; 
+                 }</code>
+            </pre>
+            <p>🔄 Переводимо в проценти:</p>
+            <p><b>100px / 400px × 100 = 25% по ширині</b></p>
+
+            <p><b>100px / 200px × 100 = 50% по висоті</b></p>
+
+            <p>Отже:</p>
+            <code>border-radius: 25% / 50%;</code>
+          </div>
+        </div>
       </div>
     </main>
     <footer></footer>
